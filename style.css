@@ -7,7 +7,6 @@
 body {
     padding: 2rem;
     background: rgb(184,76,76);
-    background: linear-gradient(56deg, rgba(184,76,76,1) 0%, rgba(205,199,68,1) 100%);
 }
 
 /* Animacija vsebine */
