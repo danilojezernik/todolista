@@ -60,8 +60,6 @@ Animation with KeyFrame h1
     }
 }
 
-
-
 .animacija-h1 {
     animation: animacija-h1 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
