@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css"/>
     <title>TO DO List</title>
-    <style>
-
-    </style>
 </head>
 <body>
 <div class="container rounded bg-white py-5 shadow">
@@ -17,23 +14,31 @@
         </div>
         <div class="p-2 bd-highlight">
             <div class="input-group mb-3">
-                <input type="text" class="form-control border border-success" placeholder="Vnesite To Do ime:"
-                       aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-success" type="button" id="button-addon2">Dodaj</button>
+                <input type="text" class="form-control border border-success" placeholder="Vnesite To Do ime:" id="vnos">
+                <button class="btn btn-outline-success" type="button" onclick="dodaj()">Dodaj</button>
             </div>
         </div>
 
-        <div class="p-2 bd-highlight">
-            <!-- Dodani elementi -->
-            <input type="checkbox" id="done" name="done" value="done"> lorem isump lorem isump lorem isump
+        <div class="p-2 bd-highlight" id="display">
+            <!-- Dodani elementi id = display
+            <input type="checkbox"> Dodali niste ničesar!!!!!!!!!!
             <div class="float-end">
                 <img src="media/edit.png" alt="Bootstrap" width="25" height="25">
-                <img src="media/delete.png" alt="Bootstrap" width="25" height="25">
+                    <img src="media/delete.png" alt="Bootstrap" width="25" height="25">
             </div>
-            <!-- Dodani elementi konec -->
+            -->
+        </div>
+        <div class="p-2 bd-highlight" id="display2">
+            <!-- Dodani elementi id = display
+            <input type="checkbox"> Dodali niste ničesar!!!!!!!!!!
+            <div class="float-end">
+                <img src="media/edit.png" alt="Bootstrap" width="25" height="25">
+                    <img src="media/delete.png" alt="Bootstrap" width="25" height="25">
+            </div>
+            -->
         </div>
         <div class="pt-5 bd-highlight text-center">
-            <button type="button" class="btn btn-outline-danger">Odstrani vse</button>
+            <button type="button" class="btn btn-outline-danger" onclick="clearAll()">Odstrani vse</button>
         </div>
     </div>
 </div>
