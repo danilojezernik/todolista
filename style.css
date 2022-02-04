@@ -11,7 +11,9 @@ body {
     background: rgb(184,76,76);
 }
 
-/* Animacija vsebine */
+/********************************
+Animation with KeyFrame container
+********************************/
 
 .container {
     animation: Prihod 1s ease 0s 1 normal forwards;
