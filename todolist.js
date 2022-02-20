@@ -1,26 +1,39 @@
-let vnesenTextToDo = false;
-let vnos = false;
-let vneseno = "";
+let dodajToDo = document.getElementById("dodajToDo");
+let toDoVsebina = document.getElementById("toDoVsebina");
+let dodajPolje = document.getElementById("dodajPolje");
+let ustvarjeniElementi = [];
 
 
-
-// doda `potreben je vpis!...`
-function dodaj() {
-    if ( vnos === false) {
-        let noviHtml = `<p><input type="checkbox"> ${vneseno}
-            <div class="float-end">
-                <img src="media/edit.png" alt="Bootstrap" width="25" height="25">
-                    <img src="media/delete.png" alt="Bootstrap" width="25" height="25">
-            </div></p>`;
-        document.getElementById("display").innerHTML += noviHtml;
-    } else if (vnos === true){
-        let celotenHtml = `Potreben je vpis! Prosim, da vpišete To Do Listo!<br>`;
-        document.getElementById("display2").innerHTML += celotenHtml;
-    }
+function add() {
+    let text = dodajPolje.value;
+    let element = document.createElement("div");
+    element.innerHTML = `
+<div class="d-flex bd-highlight p-2 mb-3 shadow border border-1 rounded-3">
+  <div class="p-2 flex-grow-1 bd-highlight"><h2 id="precrtano${ustvarjeniElementi.length}">${text}</h2></div>
+  <div class="p-2 bd-highlight"><button class="btn btn-danger" onclick="odstraniElement(${ustvarjeniElementi.length})">Odstrani</button></div>
+  <div class="p-2 bd-highlight"><button class="btn btn-success" onclick="opravilElement(${ustvarjeniElementi.length})">Opravljeno</button></div>
+</div>`;
+    toDoVsebina.appendChild(element);
+    ustvarjeniElementi.push(element);
+    reset();
 }
 
+function odstraniElement(mestoElementa) {
+    let element = ustvarjeniElementi[mestoElementa];
+    element.remove();
+}
+
+function opravilElement(mestoElementa) {
+    let precrtano = document.getElementById(`precrtano${mestoElementa}`);
+    precrtano.style.cssText = `text-decoration: line-through;`;
+}
 
 // izbriše vse
-function clearAll (){
-    document.getElementById("display").innerHTML = "";
+function clearAll() {
+    toDoVsebina.innerHTML = "";
+    ustvarjeniElementi = [];
+}
+
+function reset() {
+    document.getElementById("dodajPolje").value = "";
 }
